@@ -10,4 +10,4 @@ jobs:
       - name: Check installation token
         run: |
           curl -s -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' https://api.github.com/installation/repositories | jq -r '.repositories[0].full_name'
-          curl -s -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' https://api.github.com/app -i # | jq -r '.permissions.contents'
+          echo $GITHUB_ACTION
