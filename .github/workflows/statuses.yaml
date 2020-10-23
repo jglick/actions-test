@@ -8,5 +8,12 @@ jobs:
     steps:
     - name: test
       run: |
-        echo received $GITHUB_EVENT_NAME on $GITHUB_SHA
-        cat $GITHUB_EVENT_PATH
+        state=$(jq -r .state < $GITHUB_EVENT_PATH)
+        context=$(jq -r .context < $GITHUB_EVENT_PATH)
+        echo received $GITHUB_EVENT_NAME on $GITHUB_SHA state=$state context=$context
+        if [ $GITHUB_EVENT_NAME = status -a $state = success -a $context = ci/official ]
+        then
+          echo proceed
+        else
+          echo abort
+        fi
