@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
   status:
 jobs:
-  build:
+  test:
     runs-on: ubuntu-18.04
     steps:
     - name: test
-      run: >
+      run: |
         echo received $GITHUB_EVENT_NAME on $GITHUB_SHA
         cat $GITHUB_EVENT_PATH
