@@ -1,0 +1,12 @@
+name: release
+on:
+  workflow_dispatch:
+  status:
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: test
+      run: >
+        echo received $GITHUB_EVENT_NAME on $GITHUB_SHA
+        cat $GITHUB_EVENT_PATH
