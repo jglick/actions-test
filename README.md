@@ -1,3 +1,3 @@
 # actions-test
 
-![Releases](https://github.com/actions/hello-world/workflows/release/badge.svg)
+![Releases](https://github.com/jglick/actions-test/workflows/release/badge.svg)
