@@ -51,6 +51,7 @@ jobs:
       if: ${{ github.ref == 'refs/heads/main' }}
       with:
         name: ${{ steps.release.outputs.version }}
+        tag: ${{ steps.release.outputs.version }}
         version: ${{ steps.release.outputs.version }}
         publish: true
       env:
