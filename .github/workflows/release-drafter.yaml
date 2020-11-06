@@ -9,7 +9,6 @@ jobs:
     steps:
     - uses: release-drafter/release-drafter@v5
       with:
-        template: $CHANGES
         name: next
         tag: next
         version: next
