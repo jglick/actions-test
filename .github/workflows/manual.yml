@@ -1,9 +1,0 @@
-name: manual
-on:
-  workflow_dispatch:
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: debug
-        run: echo $GITHUB_SHA and ${{ github.event_name }}
