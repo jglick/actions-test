@@ -1,4 +1,4 @@
-name: release
+name: composite
 on:
   workflow_dispatch:
 jobs:
