@@ -5,7 +5,7 @@ jobs:
   stuff:
     runs-on: ubuntu-latest
     steps:
-    - uses: jglick/composite-action@v4
+    - uses: jglick/composite-action@v5
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Check out
@@ -14,6 +14,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - uses: jglick/composite-action@v4
+    - uses: jglick/composite-action@v5
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
