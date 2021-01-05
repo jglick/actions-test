@@ -17,12 +17,12 @@ jobs:
     steps:
     - name: Run
       run: |
-        sha=$(gh api /repos/:owner/:repo/branches/main | jq -r .commit.sha)
+        sha=$(gh api /repos/$GITHUB_REPOSITORY/branches/main | jq -r .commit.sha)
         if [ $INPUT_STATUS = pending ]
         then
-            gh api -Fname=test -Fhead_sha=$sha -Fstatus=in_progress /repos/:owner/:repo/check-runs
+            gh api -Fname=test -Fhead_sha=$sha -Fstatus=in_progress /repos/$GITHUB_REPOSITORY/check-runs
         else
-            gh api -Fname=test -Fhead_sha=$sha -Fconclusion=$INPUT_STATUS /repos/:owner/:repo/check-runs
+            gh api -Fname=test -Fhead_sha=$sha -Fconclusion=$INPUT_STATUS /repos/$GITHUB_REPOSITORY/check-runs
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
