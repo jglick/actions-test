@@ -24,7 +24,7 @@ jobs:
         then
             gh api -Fname=$name -Fhead_sha=$sha -Fstatus=in_progress /repos/$GITHUB_REPOSITORY/check-runs
         else
-            gh api -Fname=$name -Fhead_sha=$sha -Fconclusion=$INPUT_STATUS /repos/$GITHUB_REPOSITORY/check-runs
+            gh api -Fname=$name -Fhead_sha=$sha -Fconclusion=$status /repos/$GITHUB_REPOSITORY/check-runs
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
