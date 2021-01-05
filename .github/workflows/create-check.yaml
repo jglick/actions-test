@@ -11,7 +11,8 @@ on:
         description: 'pending / success / failure'
         required: true
         default: pending
-  build:
+jobs:
+  run:
     runs-on: ubuntu-latest
     steps:
     - name: Run
